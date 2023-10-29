@@ -1,0 +1,65 @@
+:root {
+    --xt-fg: var(--green);
+    --xt-bg: var(--bg);
+    --xt-font-size: min(15px,calc(2vw + 5px));
+}
+
+.intro,
+.center,
+.notification {
+    display: block;
+    text-align: center;
+}
+
+.center {
+    color: var(--grey);
+}
+
+.intro {
+    max-width: 300px;
+    margin: 0.5rem auto;
+    border: 1px solid var(--selectionMatch);
+    background-color: var(--bg-dark);
+}
+
+.highlight {
+    color: var(--cyan);
+    background-color: var(--selection);
+    border-radius: 10px;
+    padding: 0 0.2rem;
+}
+
+.notification {
+    color: var(--grey);
+    font-size: medium;
+}
+
+fieldset {
+    margin: 0.25rem 0;
+    border-color: var(--selection);
+}
+
+fieldset legend {
+    color: var(--selectionMatch);
+}
+
+fieldset legend span {
+    color: var(--cyan);
+}
+
+.spinner:after {
+    animation: animate 0.8s linear infinite;
+    content: "⠋";
+}
+
+@keyframes animate {
+    10% { content: "⠙"; }
+    20% { content: "⠹"; }
+    30% { content: "⠸"; }
+    40% { content: "⠼"; }
+    50% { content: "⠴"; }
+    60% { content: "⠦"; }
+    70% { content: "⠧"; }
+    80% { content: "⠇"; }
+    90% { content: "⠏"; }
+}

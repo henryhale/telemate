@@ -1,0 +1,82 @@
+.hack.winbox {
+    background: var(--bg-light);
+    border-radius: 0;
+    animation: popup 0.3s cubic-bezier(0.3, 1, 0.3, 1) forwards;
+}
+
+.hack.winbox:not(.min,.focus) {
+    background: var(--selection);
+}
+
+@media (hover: hover) {
+    .hack.winbox.min:not(:hover) {
+        background: var(--bg-dark);
+    }
+
+    .hack.winbox .wb-control * {
+        opacity: 0.65;
+    }
+
+    .hack.winbox .wb-control *:hover {
+        opacity: 1;
+    }
+}
+
+@media (hover: none) {
+    .hack.winbox.min {
+        background: var(--selection);
+    }
+}
+
+.hack.winbox.max {
+    border-radius: 0;
+}
+
+.hack .wb-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.hack .wb-body {
+    margin: 1px;
+    color: var(--fg);
+    background: var(--bg);
+}
+
+.hack .wb-body > div {
+    height: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hack ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.hack ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.hack ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #263040;
+}
+
+.hack ::-webkit-scrollbar-thumb:window-inactive {
+    background: #181f2a;
+}
+
+.hack ::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

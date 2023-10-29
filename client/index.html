@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeleMate</title>
+</head>
+<body>
+    <div id="app">
+        <h1>
+            <img width="100" height="100" src="/logo.svg" alt="TeleMate">
+            <span>TELEMATE</span>
+        </h1>
+        <details>
+            <summary>New Channel</summary>
+            <form action="#" method="post">
+                <div>
+                    <input type="text" name="room" placeholder="Room ID*" value="" spellcheck="false" autocomplete="off" required>
+                </div>
+                <div>
+                    <input type="password" name="code" placeholder="Passcode*" value="" spellcheck="false" autocomplete="off" required>
+                </div>
+                <div>
+                    <input type="text" name="user" placeholder="Username (optional)" spellcheck="false" value="Anonymous">
+                </div>
+                <div>
+                    <button type="submit">Connect</button>
+                </div>
+                <p>Alert: Don't use sensitive information!</p>
+            </form>
+        </details>
+        <div id="dock">
+            <span>
+                <img width="20" height="20" src="/logo.svg" alt="TeleMate">
+                &nbsp;TeleMate
+            </span>
+            <span>
+                <a title="GitHub" href="http://github.com/henryhale/telemate">
+                    <svg width="20" height="20" role="img" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z">
+                    </svg>
+                    <span>&nbsp;Star</span>
+                </a>
+            </span>
+        </div>
+    </div>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
