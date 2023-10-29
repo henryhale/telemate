@@ -1,3 +1,5 @@
+<img width="75" hieght="75" src="https://github.com/henryhale/telemate/blob/master/client/public/logo.svg">
+
 # TeleMate
 A small-scale messaging application for devs
 
