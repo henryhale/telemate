@@ -9,7 +9,7 @@ A small-scale messaging application for devs
 
 This project is based on the idea that two or more parties create a temporary room on the platform and communicate privately for a certain period of time. No account is required!
 
-### How it works?
+## How it works?
 
 Alice and Bob meet physically and decide on the _credentials_ to be used when creating a room and the _time_
 when they will be using the plaform.
