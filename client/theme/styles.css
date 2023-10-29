@@ -37,6 +37,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 body {
@@ -44,7 +45,6 @@ body {
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
-    overflow: hidden;
     position: relative;
 }
 
@@ -62,7 +62,7 @@ h1 {
         -1px 1px 1px var(--cyan),
         1px -1px 1px var(--green),
         1px 1px 1px var(--cyan);
-    padding: 0.6em 1.2em;
+    padding: 0.6em 0;
 }
 
 button {
@@ -121,7 +121,7 @@ form > p {
 #app {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem 0;
     text-align: center;
 }
 
