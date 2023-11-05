@@ -5,7 +5,13 @@ import hash from "./src/hash";
 import { openChannelWindow, onConnectHanndler } from "./src/index";
 
 window.addEventListener("DOMContentLoaded", () => {
-    const socket = io();
+    const socket = io({
+        transports: ["websocket", "polling"]
+    });
+
+    socket.on("connect_error", () => {
+        socket.io.opts.transports = ["polling", "websocket"];
+    });
 
     socket.on("connect", () => onConnectHanndler(socket));
 
@@ -30,7 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
             if (!room || !code) return false;
 
-            openChannelWindow(socket, hash(room + "#" + code), "TM-" + room, user);
+            openChannelWindow(socket, hash(room, code), hash(code, room), "TM-" + room, user);
 
             return true;
         });
