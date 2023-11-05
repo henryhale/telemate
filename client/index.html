@@ -9,20 +9,20 @@
 <body>
     <div id="app">
         <h1>
-            <img width="100" height="100" src="/logo.svg" alt="TeleMate">
+            <img width="50" height="50" src="/logo.svg" alt="TeleMate">
             <span>TELEMATE</span>
         </h1>
         <details>
             <summary>New Channel</summary>
             <form action="#" method="post">
                 <div>
-                    <input type="text" name="room" placeholder="Room ID*" value="" spellcheck="false" autocomplete="off" required>
+                    <input type="text" title="Room" name="room" placeholder="Room*" value="" spellcheck="false" autocomplete="off" required>
                 </div>
                 <div>
-                    <input type="password" name="code" placeholder="Passcode*" value="" spellcheck="false" autocomplete="off" required>
+                    <input type="password" title="Passcode" name="code" placeholder="Passcode*" value="" spellcheck="false" autocomplete="off" required>
                 </div>
                 <div>
-                    <input type="text" name="user" placeholder="Username (optional)" spellcheck="false" value="Anonymous">
+                    <input type="text" title="Username" name="user" placeholder="Username (optional)" spellcheck="false" value="Anonymous">
                 </div>
                 <div>
                     <button type="submit">Connect</button>
@@ -31,10 +31,7 @@
             </form>
         </details>
         <div id="dock">
-            <span>
-                <img width="20" height="20" src="/logo.svg" alt="TeleMate">
-                &nbsp;TeleMate
-            </span>
+            <span>TeleMate</span>
             <span>
                 <a title="GitHub" href="http://github.com/henryhale/telemate">
                     <svg width="20" height="20" role="img" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">

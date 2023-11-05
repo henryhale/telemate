@@ -1,7 +1,14 @@
 :root {
-    --xt-fg: var(--green);
+    --xt-fg: var(--fg);
     --xt-bg: var(--bg);
-    --xt-font-size: min(15px,calc(2vw + 5px));
+    --xt-font-size: min(16px,calc(2vw + 5px));
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --xt-fg: var(--green);
+        --xt-bg: var(--bg);
+    }
 }
 
 .intro,
@@ -11,36 +18,42 @@
     text-align: center;
 }
 
-.center {
-    color: var(--grey);
-}
-
 .intro {
     max-width: 300px;
     margin: 0.5rem auto;
-    border: 1px solid var(--selectionMatch);
-    background-color: var(--bg-dark);
+    border: 1px solid var(--borderSolid);
+    background-color: var(--bg-light);
+}
+
+@media (prefers-color-scheme: dark) {
+    .intro {
+        background-color: var(--bg-dark);
+    }
+    .highlight {
+        color: var(--cyan);
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 }
 
 .highlight {
-    color: var(--cyan);
-    background-color: var(--selection);
+    color: var(--fg);
+    background-color: var(--bg-light);
     border-radius: 10px;
     padding: 0 0.2rem;
 }
 
 .notification {
-    color: var(--grey);
+    opacity: 0.5;
     font-size: medium;
 }
 
 fieldset {
     margin: 0.25rem 0;
-    border-color: var(--selection);
+    border-color: var(--border);
 }
 
 fieldset legend {
-    color: var(--selectionMatch);
+    color: var(--borderSolid);
 }
 
 fieldset legend span {
