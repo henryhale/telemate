@@ -20,6 +20,10 @@ When the agreed time reaches, both use the same credentials on the platform to a
 
 A chat window is opened and once connected, communication may begin. 
 
+## Live Demo
+
+Here is a _temporary_ demo of TeleMate: [Click Here](https://telemate.onrender.com)
+
 ## Features
 
 - [x] Lightweight and fast
