@@ -31,6 +31,10 @@
     input {
         color: var(--cyan) !important;
     }
+    #foot {
+        border-top: 4px solid var(--cyan) !important;
+	    box-shadow: 0 0 50px 0 rgba(103, 232, 249, 0.25) !important;
+    }
 }
 
 :root {
@@ -199,4 +203,16 @@ form > p {
 #dock > span:last-child {
     flex-grow: 1;
     text-align: right;
+}
+
+#foot {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -10;
+    height: 38px;
+	border-top: 4px solid var(--bg-light);
+	box-shadow: 0 0 10px 0 var(--bg-light);
+	padding: 0 2rem 0;
 }
