@@ -22,12 +22,12 @@ A chat window is opened and once connected, communication may begin.
 
 ## Features
 
-- [ ] Lightweight and fast
-- [ ] Multiple chat windows for different rooms
-- [ ] Dark/Light mode
-- [ ] Command line interface
-- [x] Encryption (work in progress)
-- [x] Third-party server option via URL
+- [x] Lightweight and fast
+- [x] Multiple chat windows for different rooms
+- [x] Dark/Light mode
+- [x] Command line interface
+- [ ] Encryption (work in progress)
+- [ ] Third-party server option via URL
 
 ## Anatomy of UI
 
