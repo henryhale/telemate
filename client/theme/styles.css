@@ -1,15 +1,39 @@
 :root {
-    --bg: #282a36;
-    --fg: #f8f8f2;
-    --cyan: #8BE9FD;
-    --green: #50FA7B;
-    --grey: #888;
-    --fg-dark: #c5c5c0;
-    --bg-dark: #21222C;
-    --bg-light: #343746;
-    --selection: rgba(255, 255, 255, 0.1);
-    --selectionMatch: rgba(255, 255, 255, 0.2);
+    --bg: #FFFFFF;
+    --fg: #334155;
+    --cyan: #38bdf8;
+    --green: #10b981;
+    --border: #cbd5e1;
+    --borderSolid: #64748b;
+    --bg-light: #f1f5f9;
+    --bg-dark: var(--fg);
+}
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #282A36;
+        --fg: #f8f8f2;
+        --cyan: #8BE9FD;
+        --green: #50FA7B;
+        --border: rgba(255, 255, 255, 0.1);
+        --borderSolid: rgba(255, 255, 255, 0.2);
+        --bg-light: #343746;
+        --bg-dark: #1e293b;
+    }
+    h1 {
+        color: var(--bg);
+        text-shadow: 
+            -1px -1px 0 var(--green),
+            -1px 2px 0 var(--cyan),
+            1px -1px 0 var(--green),
+            1px 2px 0 var(--cyan);
+    }
+    input {
+        color: var(--cyan) !important;
+    }
+}
+
+:root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
@@ -33,11 +57,14 @@
     font-size: inherit;
 }
 
+html {
+    overflow: hidden;
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 body {
@@ -45,7 +72,14 @@ body {
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
+    height: 100vh;
     position: relative;
+}
+
+@media screen and (max-height: 500px) {
+    body {
+        overflow-y: auto;
+    }
 }
 
 h1 {
@@ -55,51 +89,49 @@ h1 {
     margin: 0 0 1rem 0;
     font-size: 3.2em;
     line-height: 1.1;
-    /* color: var(--green); */
-    color: var(--bg-dark);
-    text-shadow: 
-        -1px -1px 1px var(--green),
-        -1px 1px 1px var(--cyan),
-        1px -1px 1px var(--green),
-        1px 1px 1px var(--cyan);
     padding: 0.6em 0;
+}
+
+h1 img {
+    margin-bottom: 1rem;
 }
 
 button {
     padding: 0.6em 1.2em;
     color: var(--fg);
-    background-color: var(--bg-light);
+    background-color: transparent;
     cursor: pointer;
+    border: 1px solid transparent;
 }
 
 input,
 button {
     outline: none;
-    border: 1px solid transparent;
     font-family: inherit;
     font-size: inherit;
     transition: border-color 0.25s;
 }
 
 input:hover,
-button:not(:disabled):hover {
-    border-color: var(--selection);
+button:not(:disabled):hover,
+input:focus,
+button:focus {
+    border-color: var(--borderSolid);
 }
 
 input:focus,
 button:focus {
-    border-color: var(--selectionMatch);
     background-color: var(--bg-light);
 }
 
 input {
-    color: var(--cyan);
+    color: currentColor;
     width: 100%;
     max-width: 250px;
     padding: 0.6em 0.5em;
     outline: 0 none;
-    border: 1px solid transparent;
-    background-color: var(--bg-dark);
+    border: 1px solid var(--border);
+    background-color: transparent;
     font-size: inherit;
     transition: border-color 0.25s;
 }
@@ -113,7 +145,7 @@ form > div {
 }
 
 form > p {
-    color: var(--grey);
+    opacity: 0.65;
     margin-top: 2rem;
     font-size: 1rem;
 }
@@ -138,9 +170,14 @@ form > p {
     top: 0;
     left: 0;
     right: 0;
-    background-color: var(--bg-dark);
-    color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 0 var(--bg-light);
+    background-color: var(--bg);
+    opacity: 0.75;
     padding: 2px 12px;
+}
+
+#dock:hover {
+    opacity: 1;
 }
 
 #dock a {
@@ -159,17 +196,7 @@ form > p {
     font-weight: 500;
 }
 
-#dock:hover > span:first-child {
-    color: var(--green);
-}
-
 #dock > span:last-child {
     flex-grow: 1;
     text-align: right;
-}
-
-@media screen and (max-height: 500px) {
-    body {
-        overflow-y: auto;
-    }
 }

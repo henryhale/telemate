@@ -1,11 +1,17 @@
 .hack.winbox {
-    background: var(--bg-light);
+    background-color: var(--fg);
     border-radius: 0;
     animation: popup 0.3s cubic-bezier(0.3, 1, 0.3, 1) forwards;
 }
 
+@media (prefers-color-scheme: dark) {
+    .hack.winbox {
+        background-color: var(--bg-light);
+    }
+}
+
 .hack.winbox:not(.min,.focus) {
-    background: var(--selection);
+    background: var(--border);
 }
 
 @media (hover: hover) {
@@ -24,7 +30,7 @@
 
 @media (hover: none) {
     .hack.winbox.min {
-        background: var(--selection);
+        background: var(--border);
     }
 }
 
