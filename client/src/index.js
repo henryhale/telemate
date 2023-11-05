@@ -1,9 +1,10 @@
 import { createWinbox } from "./winbox";
 import { createTerminal } from "./cli";
+import { decrypt, encrypt } from "./hash";
 
 const state = new Map();
 
-export function openChannelWindow(socket, room, title, user) {
+export function openChannelWindow(socket, room, code, title, user) {
     
     if (state.has(room)) {
         state.get(room).win.minimize(false).focus();
@@ -16,7 +17,7 @@ export function openChannelWindow(socket, room, title, user) {
 
     win.onclose = (flag) => {
         if (!flag) {
-            socket.emit("room:leave", room, user);
+            socket.emit("room:leave", room, encrypt(user, code));
             state.delete(room);
         }
         term.dispose();
@@ -59,13 +60,13 @@ export function openChannelWindow(socket, room, title, user) {
             }
             return;
         }
-        socket.emit("room:message", room, user, input);
+        socket.emit("room:message", room, encrypt(user, code), encrypt(input, code));
     });
 
     if (socket.connected) {
-        state.set(room, { title, term, win, user });
+        state.set(room, { code, title, term, win, user });
     
-        socket.emit("room:join", room, user);
+        socket.emit("room:join", room, encrypt(user, code));
 
         socket.once("disconnect", () => win.close());
 
@@ -84,19 +85,22 @@ export function onConnectHanndler(socket) {
     socket.on("member", (room, user, num) => {
         const s = state.get(room);
         if (s) {
-            s.term.write(`<span class=notification>${user} has joined</span>`);
+            s.term.write(`<span class=notification>${decrypt(user, s.code)} has joined</span>`);
             s.win.setTitle(`${s.title} [${num || 0}]`);
         }
     });
 
     socket.on("message", (room, user, message) => {
-        state.get(room)?.term.write(`<fieldset><legend>[ <span>${user}</span> ]</legend>${message}</fieldset>`);
+        const s = state.get(room);
+        if (s) {
+            s.term.write(`<fieldset><legend>[ <span>${decrypt(user, s.code)}</span> ]</legend>${decrypt(message, s.code)}</fieldset>`);
+        }
     });
 
     socket.on("leave", (room, user, num) => {
         const s = state.get(room);
         if (s) {
-            s.term.writeln(`<span class=notification>${user} disconnected`);
+            s.term.writeln(`<span class=notification>${decrypt(user, s.code)} disconnected`);
             s.win.setTitle(`${s.title} [${num || 0}]`);
         }
     });

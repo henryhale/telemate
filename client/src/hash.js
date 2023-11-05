@@ -1,7 +1,8 @@
-export default function hash(str = "") {
-    let j = 9;
-    for (let i = 0; i < str.length;) {
-        j = Math.imul(j ^ str.charCodeAt(i++), 9 ** 9);        
-    }
-    return j ^ j >>> 9;
+import c from "crypto-js";
+
+export default function hash(s1, s2) {
+    return c.HmacSHA256(s1 + s2, s2).toString();
 }
+
+export const encrypt = (msg, key) => c.AES.encrypt(msg, key).toString();
+export const decrypt = (msg, key) => c.AES.decrypt(msg, key).toString(c.enc.Utf8);

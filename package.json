@@ -4,10 +4,8 @@
   "description": "A small-scale messaging application for devs",
   "type": "module",
   "scripts": {
-    "dev:client": "vite client",
-    "build:client": "vite build client",
-    "dev:server": "nodemon server/index.js",
-    "serve": "pnpm build:client && node server/index.js"
+    "dev": "concurrently \"vite build client -w\" \"nodemon server/index.js\"",
+    "serve": "vite build client && node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,10 +22,12 @@
   },
   "homepage": "https://github.com/henryhale/telemate#readme",
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "nodemon": "^3.0.1",
     "vite": "^4.5.0"
   },
   "dependencies": {
+    "crypto-js": "^4.2.0",
     "express": "^4.18.2",
     "helmet": "^7.0.0",
     "socket.io": "^4.7.2",
@@ -35,5 +35,9 @@
     "toobusy-js": "^0.5.1",
     "winbox": "^0.2.82",
     "xterminal": "^2.1.7"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
   }
 }
