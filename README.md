@@ -1,4 +1,4 @@
-<img width="75" hieght="75" src="https://github.com/henryhale/telemate/blob/master/client/public/logo.svg">
+<img width="75" hieght="75" src="./client/public/logo.svg">
 
 # TeleMate
 A small-scale messaging application for devs
@@ -7,21 +7,37 @@ A small-scale messaging application for devs
 
 :wave: Hello World!
 
-This project is based on the idea that two or more parties create a temporary room on the platform and communicate privately for a certain period of time. No account is required!
+This project is based on the idea that two or more parties create a temporary room on the platform and communicate privately for a certain period of time. No account is required! Just choose your credentials.
 
 ## How it works?
 
 Alice and Bob meet physically and decide on the _credentials_ to be used when creating a room and the _time_
 when they will be using the plaform.
 
-Alice may select the `Room ID` (_string_), say `Earth` and Bob selects the `Passcode` (_string_), say `1234`.
+Alice may select the `Room` (_string_), say `Earth` and Bob selects the `Passcode` (_string_), say `1234`.
 
-When agreed time reaches, both use the same credentials on the platform to access the room. 
+When the agreed time reaches, both use the same credentials on the platform to access the room. 
 
-A chat window is opened and once connected, communication may begin. The title of the chat window follows the format: `TM-{Room ID} - [{User count}]`. `User count` show the number of users in that room.
+A chat window is opened and once connected, communication may begin. 
+
+## Features
+
+- [ ] Lightweight and fast
+- [ ] Multiple chat windows for different rooms
+- [ ] Dark/Light mode
+- [ ] Command line interface
+- [x] Encryption (work in progress)
+- [x] Third-party server option via URL
+
+## Anatomy of UI
+
+Whenever a new room is created, a chat window pops up. 
+
+The title of the chat window follows the format: `TM-{room} - [{users}]`. `room` represents the actual room identifier in uppercase and `users` show the number of users in that room.
+
 Other users in the room are notified of who has _joined_ or _disconnected_.
 
-To chat, just type a message and hit enter.
+To begin chatting, focus the chat window and type the message. Hit `Enter` key to send the message.
 
 Once you're done, close the chat window to disconnect.
 
@@ -55,17 +71,19 @@ A big shoutout to these awesome projects, this project heavily relies on them;
 - [socket.io](https://github.com/socketio/socket.io) - node.js realtime framework server
 - [helmet](https://github.com/helmetjs/helmet/) - help secure Express/Connect apps with various HTTP headers
 - [express](https://github.com/expressjs/express/) - Fast, unopinionated, minimalist web framework
+- [toobusy-js](https://github.com/STRML/node-toobusy) - Don't fall over when your Node.JS server is too busy. Now without native dependencies!
 
 ## Conclusion
 
 Thank you for your interest in this project!
-We value and appreciate contributions from the developer community, and your efforts will help make this project even better.
+Contributions from the developer community are greatly valued and appreciated, 
+and your efforts will help make this project even better.
 
 ## License
 
 Copyright (c) 2023 [Henry Hale](https://github.com/henryhale/).
 
-Released under the [MIT License](https://github.com/henryhale/telemate/blob/master/LICENSE.md).
+Released under the [MIT License](./LICENSE.md).
 
 
 
