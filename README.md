@@ -59,8 +59,9 @@ To get started with development, follow these steps:
 1. Fork or Clone this repository: `git clone https://github.com/henryhale/telemate.git`
 2. Navigate to the project directory: `cd telemate`
 3. Install dependencies: `pnpm install`
-4. Run development server: `pnpm dev:server`
-5. Separately run frontend dev server: `pnpm dev:client`
+4. Run development server: `pnpm dev`
+5. Separately run frontend dev server: `pnpm exec vite client`
+6. Building for production: `pnpm serve`
 
 ## Browser Support
 
