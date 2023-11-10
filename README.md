@@ -1,7 +1,13 @@
+<div align=center>
+
 <img width="75" hieght="75" src="./client/public/logo.svg">
 
 # TeleMate
 A small-scale messaging application for devs
+
+![](./screenshot.png)
+
+</div>
 
 ## Overview
 
