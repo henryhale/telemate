@@ -5,7 +5,7 @@
 # TeleMate
 A small-scale messaging application for devs
 
-![](./screenshot.png)
+![](./media/screenshot.png)
 
 </div>
 
@@ -50,6 +50,8 @@ Other users in the room are notified of who has _joined_ or _disconnected_.
 To begin chatting, focus the chat window and type the message. Hit `Enter` key to send the message.
 
 Once you're done, close the chat window to disconnect.
+
+![](./media/chat.png)
 
 ## Development
 
