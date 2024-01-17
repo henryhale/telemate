@@ -23,18 +23,18 @@
   "homepage": "https://github.com/henryhale/telemate#readme",
   "devDependencies": {
     "concurrently": "^8.2.2",
-    "nodemon": "^3.0.1",
-    "vite": "^4.5.0"
+    "nodemon": "^3.0.3",
+    "vite": "^5.0.11"
   },
   "dependencies": {
     "crypto-js": "^4.2.0",
     "express": "^4.18.2",
-    "helmet": "^7.0.0",
-    "socket.io": "^4.7.2",
-    "socket.io-client": "^4.7.2",
+    "helmet": "^7.1.0",
+    "socket.io": "^4.7.4",
+    "socket.io-client": "^4.7.4",
     "toobusy-js": "^0.5.1",
     "winbox": "^0.2.82",
-    "xterminal": "^2.1.7"
+    "xterminal": "^2.1.8"
   },
   "engines": {
     "node": ">=18",
