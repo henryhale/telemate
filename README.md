@@ -36,6 +36,7 @@ Here is a _temporary_ demo of TeleMate: [Click Here](https://telemate.onrender.c
 - [x] Multiple chat windows for different rooms
 - [x] Dark/Light mode
 - [x] Command line interface
+- [x] No database or tracking
 - [x] Encryption
 - [ ] Third-party server option via URL _(work in progress)_
 
