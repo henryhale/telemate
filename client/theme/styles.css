@@ -201,8 +201,16 @@ form > p {
 }
 
 #dock > span:last-child {
-    flex-grow: 1;
     text-align: right;
+}
+
+#dock > span:last-child > *:not(:first-child) {
+    margin-left: 1rem;
+}
+
+#dock > span:nth-child(2)  {
+    flex-grow: 1;
+    text-align: center;
 }
 
 #foot {

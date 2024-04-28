@@ -40,5 +40,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
             return true;
         });
+    
+    const tid = setInterval(() => {
+        const slot = document.querySelector('#time');
+        if (!slot) clearInterval(tid);
+        const date = new Date();
+        slot.innerHTML = date.toLocaleTimeString();
+    }, 1000);
+
+    window.addEventListener('beforeunload', () => {
+        clearInterval(tid);
+    });
 });
 
