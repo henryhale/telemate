@@ -22,9 +22,9 @@ when they will be using the plaform.
 
 Alice may select the `Room` (_string_), say `Earth` and Bob selects the `Passcode` (_string_), say `1234`.
 
-When the agreed time reaches, both use the same credentials on the platform to access the room. 
+When the agreed time reaches, both use the same credentials on the platform to access the room.
 
-A chat window is opened and once connected, communication may begin. 
+A chat window is opened and once connected, communication may begin.
 
 ## Live Demo
 
@@ -42,7 +42,7 @@ Here is a _temporary_ demo of TeleMate: [Click Here](https://telemate.onrender.c
 
 ## Anatomy of UI
 
-Whenever a new room is created, a chat window pops up. 
+Whenever a new room is created, a chat window pops up.
 
 The title of the chat window follows the format: `TM-{room} - [{users}]`. `room` represents the actual room identifier in uppercase and `users` show the number of users in that room.
 
@@ -60,8 +60,8 @@ To get started with development, follow these steps:
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org) (>=18)
-- [pnpm](https://pnpm.io/) (>=7)
+- [Node.js](https://nodejs.org) (>=22)
+- [pnpm](https://pnpm.io/) (>=10)
 
 ### Setup
 
@@ -69,8 +69,8 @@ To get started with development, follow these steps:
 2. Navigate to the project directory: `cd telemate`
 3. Install dependencies: `pnpm install`
 4. Run development server: `pnpm dev`
-5. Separately run frontend dev server: `pnpm exec vite client`
-6. Building for production: `pnpm serve`
+5. Building for production: `pnpm serve`
+6. Now go to `http://localhost:8900`
 
 ## Browser Support
 
@@ -90,7 +90,7 @@ A big shoutout to these awesome projects, this project heavily relies on them;
 ## Conclusion
 
 Thank you for your interest in this project!
-Contributions from the developer community are greatly valued and appreciated, 
+Contributions from the developer community are greatly valued and appreciated,
 and your efforts will help make this project even better.
 
 ## License
@@ -98,6 +98,3 @@ and your efforts will help make this project even better.
 Copyright (c) 2023 [Henry Hale](https://github.com/henryhale/).
 
 Released under the [MIT License](./LICENSE.md).
-
-
-
