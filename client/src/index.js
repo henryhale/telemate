@@ -4,6 +4,12 @@ import { decrypt, encrypt } from "./hash";
 
 const state = new Map();
 
+export function sanitizeData(data = "") {
+    const span = document.createElement('span')
+    span.textContent = data
+    return span.innerHTML
+}
+
 export function openChannelWindow(socket, room, code, title, user) {
     
     if (state.has(room)) {
@@ -60,7 +66,7 @@ export function openChannelWindow(socket, room, code, title, user) {
             }
             return;
         }
-        socket.emit("room:message", room, encrypt(user, code), encrypt(input, code));
+        socket.emit("room:message", room, encrypt(user, code), encrypt(sanitizeData(input), code));
     });
 
     if (socket.connected) {
@@ -85,23 +91,23 @@ export function onConnectHanndler(socket) {
     socket.on("member", (room, user, num) => {
         const s = state.get(room);
         if (s) {
-            s.term.write(`<span class=notification>${decrypt(user, s.code)} has joined</span>`);
-            s.win.setTitle(`${s.title} [${num || 0}]`);
+            s.term.write(`<span class=notification>${sanitizeData(decrypt(user, s.code))} has joined</span>`);
+            s.win.setTitle(`${s.title} [${sanitizeData(num) || 0}]`);
         }
     });
 
     socket.on("message", (room, user, message) => {
         const s = state.get(room);
         if (s) {
-            s.term.write(`<fieldset><legend>[ <span>${decrypt(user, s.code)}</span> ]</legend>${decrypt(message, s.code)}</fieldset>`);
+            s.term.write(`<fieldset><legend>[ <span>${sanitizeData(decrypt(user, s.code))}</span> ]</legend>${sanitizeData(decrypt(message, s.code))}</fieldset>`);
         }
     });
 
     socket.on("leave", (room, user, num) => {
         const s = state.get(room);
         if (s) {
-            s.term.writeln(`<span class=notification>${decrypt(user, s.code)} disconnected`);
-            s.win.setTitle(`${s.title} [${num || 0}]`);
+            s.term.writeln(`<span class=notification>${sanitizeData(decrypt(user, s.code))} disconnected`);
+            s.win.setTitle(`${s.title} [${sanitizeData(num) || 0}]`);
         }
     });
 }

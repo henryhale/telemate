@@ -34,7 +34,7 @@
         "socket.io-client": "^4.8.1",
         "toobusy-js": "^0.5.1",
         "winbox": "^0.2.82",
-        "xterminal": "^2.1.12"
+        "xterminal": "^2.1.14"
     },
     "engines": {
         "node": ">=22",

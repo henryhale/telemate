@@ -2,7 +2,7 @@ import "./theme/styles.css";
 
 import io from "socket.io-client";
 import hash from "./src/hash";
-import { openChannelWindow, onConnectHanndler } from "./src/index";
+import { openChannelWindow, onConnectHanndler, sanitizeData } from "./src/index";
 
 window.addEventListener("DOMContentLoaded", () => {
     const socket = io({
@@ -29,9 +29,9 @@ window.addEventListener("DOMContentLoaded", () => {
             ev.target[1].value = "";
 
             const { room, code, user } = { 
-                room: data.get("room") || "",
-                code: data.get("code") || "",
-                user: data.get("user") || "Anonymous",
+                room: sanitizeData(data.get("room") || ""),
+                code: sanitizeData(data.get("code") || ""),
+                user: sanitizeData(data.get("user") || "Anonymous"),
             };
 
             if (!room || !code) return false;
