@@ -28,7 +28,7 @@ A chat window is opened and once connected, communication may begin.
 
 ## Live Demo
 
-Here is a _temporary_ demo of TeleMate: [Click Here](https://telemate.onrender.com)
+Here is a cloud-hosted demo of TeleMate: [Click Here](https://telemate.onrender.com)
 
 ## Features
 
@@ -95,6 +95,6 @@ and your efforts will help make this project even better.
 
 ## License
 
-Copyright (c) 2023 [Henry Hale](https://github.com/henryhale/).
+Copyright (c) 2023-present [Henry Hale](https://github.com/henryhale/).
 
 Released under the [MIT License](./LICENSE.md).
