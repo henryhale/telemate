@@ -91,7 +91,7 @@ export function onConnectHanndler(socket) {
     socket.on("member", (room, user, num) => {
         const s = state.get(room);
         if (s) {
-            s.term.write(`<span class=notification>${sanitizeData(decrypt(user, s.code))} has joined</span>`);
+            s.term.write(`<span class=notification>${decrypt(user, s.code)} has joined</span>`);
             s.win.setTitle(`${s.title} [${sanitizeData(num) || 0}]`);
         }
     });
@@ -99,14 +99,14 @@ export function onConnectHanndler(socket) {
     socket.on("message", (room, user, message) => {
         const s = state.get(room);
         if (s) {
-            s.term.write(`<fieldset><legend>[ <span>${sanitizeData(decrypt(user, s.code))}</span> ]</legend>${sanitizeData(decrypt(message, s.code))}</fieldset>`);
+            s.term.write(`<fieldset><legend>[ <span>${decrypt(user, s.code)}</span> ]</legend>${decrypt(message, s.code)}</fieldset>`);
         }
     });
 
     socket.on("leave", (room, user, num) => {
         const s = state.get(room);
         if (s) {
-            s.term.writeln(`<span class=notification>${sanitizeData(decrypt(user, s.code))} disconnected`);
+            s.term.writeln(`<span class=notification>${decrypt(user, s.code)} disconnected`);
             s.win.setTitle(`${s.title} [${sanitizeData(num) || 0}]`);
         }
     });
